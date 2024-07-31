@@ -1,0 +1,1428 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+*::selection{
+    background: #000;
+    color: #ffffff;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #f7f7f7;
+  
+}
+.gsap-marker-end,.gsap-marker-start,.gsap-marker-scroller-start,.gsap-marker-scroller-end{
+   opacity: 0;
+   pointer-events: none;
+   visibility: hidden;
+}
+.nav{
+   
+   width: 100%;
+   /* background-color: rgb(143, 120, 120); */
+   position: fixed;
+   
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   z-index: 1001;
+}
+.nav .nav-1{
+   height: 105px;
+   overflow: hidden;
+}
+.nav .nav-1 svg{
+   padding: 20px;
+   display: block;
+  
+}
+.new-nav{
+   color: white;
+}
+.nav .nav-2{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   padding-right: 30px;
+   width: 50%;
+   
+  
+}
+.nav .nav-2 a{
+   text-decoration: none;
+   color: #000;
+   
+}
+.nav .nav-2 #shop{
+   width: max-content;
+}
+.nav-2 .links{
+   display: inline-flex;
+   gap: 60px;
+font-weight: 200;
+font-size: 13px;
+}
+.nav-2 .links #catering i{
+   padding: 5px;
+}
+.nav-2 .links a:hover{
+opacity: 0.3;
+}
+.nav-2 .links a::after{
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -5px;
+   width: 100%;
+   height: 2px;
+   background-color: #000;
+   transform: scaleX(0);
+   transform-origin: bottom right;
+   transition: transform 0.5s ease-in-out;
+}
+.nav-2 .links a:hover::after{
+   transform: scaleX(1);
+   transform-origin: bottom left;
+}
+.nav-2 .logo{
+   display: inline-flex;
+   gap: 70px;
+   background-color: #f7f7f7;
+   border-radius: 50px;
+   padding: 15px;
+   
+}
+.new-nav2 #mohan a{
+   color: white;
+}
+.new-nav2 .logo{
+   color: white;
+   background-color: #000;
+}
+.new-nav2 .logo i{
+   color: white;
+   background-color: #000;
+}
+#cursor{
+   height: 150px;
+   width: 150px;
+   border-radius: 50%;
+   background-color: lightblue;
+   position: fixed;
+   transform: translate(-50%,-50%) scale(1) ;
+   z-index: -100;
+ 
+}
+
+#page1{
+  min-height: 100vh;
+  position: relative;
+  width: 100%; 
+  /* padding:0 0 0 1vw ; */
+  padding-top: 18vh; 
+
+}
+#page1 h1{
+    font-family: futura;
+    font-size: 15.6vw;
+    text-transform: uppercase;
+    line-height: 13.4vw;
+    letter-spacing: -5px;
+  
+}
+.video{
+    height: 100vh;
+    width: 100%;
+    background-color: aquamarine;
+    margin-top: 2vh;
+    position: relative;
+}
+.video video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page1  #play{
+    width: max-content;
+    height: max-content;
+    padding: 1.3em 0.8em;
+    border-radius: 50%;
+    color: white;
+    background-color: #000;
+    font-family: futura;
+    font-size: 2vw;
+    position: fixed;
+    text-transform: uppercase;
+    opacity: 0;
+    scale: 0;
+    cursor: pointer;
+    
+}
+header{
+   padding-top: 7vh;
+   width: 100%;
+   height: fit-content;
+   display: flex;
+   justify-content: space-between;
+  align-items: center;
+}
+header span{
+   
+   padding:0 1vw 0 1vw;
+}
+.header-line{
+   width: 98%;
+   height: 0.6px;
+   /* background-color: #020d19; */
+   background-color: #101720;
+  
+margin: 5px 1vw 2vh 1vw;
+overflow: hidden;
+}
+
+#page2{
+   height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   /* padding-top: 10vw; */
+}
+
+#page2 div{
+    width: 30%;
+    height: 100%;
+   position: relative;
+    overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#page2 div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.2;
+    
+}
+
+ #page2 .element .dets{
+    width: 65%;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+ 
+ }
+ .dets:hover ~ .abcd {
+   display: block;
+ }
+ 
+ .abcd {
+   display: none;
+ }
+ #page2 .element .long-dets img{
+   width: 50px;
+   height: 50px;
+  
+   position: absolute;
+ 
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   background-color: aqua;
+ }
+ #page2 .element .dets:hover{
+    
+    
+    height: 30%;
+    border-radius: 30px;
+    position: absolute;
+    z-index: 9;
+    
+ }
+ #page2 .element #new{
+   width: 50px;
+   height: 50px;
+ }
+ #page2 .element #dets1{
+    background-color: #f5dfcf ;
+   
+ }
+ #page2 .element #dets2{
+    background-color: #edf3ff ;
+   
+ }
+ #page2 .element #dets3{
+    background-color: #ffffff ;
+   
+ }
+ #page2 .element .dets #dot{
+    font-size: 6px;
+ }
+ #page2 .element .dets .shop,#page2 .element .dets .home{
+    font-size: 14px;
+    font-family: Helvetica, "Lucida Sans", Tahoma, sans-serif;
+ }
+ #page2 .element .dets .home{
+    font-weight: 600;
+ }
+ #page2 .element .dets a{
+    text-decoration: none;
+    color: #000;
+    font-family: "Futura Now Headline", "Lucida Sans", Tahoma, sans-serif;
+ }
+ #page3{
+    background-color: #f7f7f7;
+    height: max-content;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+ }
+ .message{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding: 50px 10px 0 2vw;
+ margin-bottom: 12em;
+  gap: 0;
+}
+.message h1{
+   width: 100%;
+   text-transform: uppercase;
+   font-size: 60px;
+   text-align: justify;
+  font-weight: 500;
+   font-family: futura;
+line-height: 1em;
+padding-top: 0.8em;
+}
+.message .second-message{
+   font-family: Helvetica, "Lucida Sans", Tahoma, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+   display: flex;
+   flex-direction: column;
+   font-weight: 400;
+   width: 45%;
+   font-size: 14px;
+   text-align: justify;
+justify-content: flex-end;
+padding-top:3em ;
+line-height: 1.7em;
+}
+.message .second-message p{
+   padding-bottom: 40px;
+}
+.message span {
+   cursor: pointer;
+   /* text-decoration: underline; */
+   
+ }
+ .message span a{
+   position: relative;
+   text-transform: uppercase;
+   text-decoration: none;
+   width: max-content;
+   color: #000;
+   font-family: "Lucida Sans", Tahoma, nonospaced;
+   font-size: 12px;
+ }
+.message span a::after{
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -5px;
+   width: 100%;
+   height: 0.6px;
+   background-color: #000;
+   transform: scaleX(0);
+   transform-origin: bottom right;
+   transition: transform 0.5s ease-in-out;
+}
+.message span a:hover::after{
+   transform: scaleX(1);
+   transform-origin: bottom left;
+}
+ .child{
+    height: 70vh;
+    width: 48vw;
+  
+display: flex;
+align-items: center;
+justify-content: center;
+padding-bottom: 2em; 
+ }
+ .child figure{
+    height:100%;
+    width: fit-content;
+  padding-top: 4em;
+ }
+ .child figure img{
+   height:100%;
+   width: fit-content;
+}
+.child figure figcaption{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   text-transform: uppercase;
+   font-family: Helvetica, "Lucida Sans", Tahoma, sans-serif;
+   font-weight: 300;
+   font-size: small;
+}
+#page4{
+   height: 100vh;
+   padding-top: 20vh;
+   
+}
+#page5 .page5-header{
+  text-transform: uppercase; 
+  font-family:  Helvetica;
+  font-size: 13px;
+}
+#page5 .client-message div div{
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+}
+#page5 .client-message div div:hover{
+   color: gray;
+}
+#page5 .client-message div div span{
+   text-align: center;
+  font-size: 28px;
+  line-height: 0.9em;
+  font-weight: 500;
+}
+#page5 .paragraph{
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+#page5 .own-message{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 2em 0 2em;
+   flex-direction: column;
+}
+#page5 .own-message button{
+padding: 1.5vw 4vw;
+border-radius: 50px;
+text-align: center;
+text-transform: uppercase;
+color: #f7f7f7;
+background-color: #000;
+font-weight: 700;
+border: none;
+}
+#page5 .own-message button:hover{
+   color: rgb(159, 155, 155);
+}
+#page5 .own-message div{
+   text-align: center;
+   font-size: 24px;
+   margin-top: 2em;
+   /* padding-top: 2em; */
+   /* width: fit-content; */
+   height: fit-content;
+}
+#page5 .own-message div span{
+   display: inline-block;
+   width: 50%;
+}
+#page5 .paragraph #client-message-paragraph{
+   width: 80%;
+   font-family: "Futura Now Headline" ,Helvetica;
+   font-size: 72px;
+   font-weight: 900;
+   text-align: center;
+   letter-spacing: -0.03em;
+   line-height: 1em;
+   text-transform: uppercase;
+}
+#page4 .page4-content{
+   display: grid;
+   grid-template-columns: 1fr 2.5fr ;
+   gap: 60px;
+}
+.page4-content .message{
+   display: flex;
+   flex-direction: column;
+  
+}
+.page4-content .message h2{
+   font-family: "futura";
+   padding-bottom: 1.1em;
+}
+.page4-content .message p{
+   letter-spacing: 0.01em;
+   font-size: 16px;
+   font-family: Helvetica;
+   margin-bottom: 32px;
+   font-weight: 400;
+   line-height: 1.5em;
+}
+.page4-content .message span a{
+   font-size: 12px;
+   font-family:"Lucida Sans", Tahoma, sans-serif ;
+}
+#page4 .page4-image{
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+#page4 .page4-image figure img{
+   width: 30vw;
+   height: 90vh;
+}
+footer{
+   height:fit-content;
+   margin-top: 3em;
+   padding-top: 4em;
+   padding-bottom: 3em;
+}
+footer .end-content .end-content1{
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1vw 1vw 0 1vw;
+font-family:"Futura Now Headline", "Lucida Sans", Tahoma, sans-serif ;
+
+
+}
+footer .end-content .end-content1 input{
+   
+   font-size: 40px;
+   border: none;
+   width: 100%;
+   text-transform: uppercase;
+   background-color: #f7f7f7;
+  
+ text-decoration: none;
+}
+.header-line2{
+   width: 98%;
+   height: 0.76px;
+   /* background-color: #020d19; */
+   background-color: #101720;
+  
+margin: 5px 1vw 2vh 1vw;
+overflow: hidden;
+}
+
+footer .end-content .end-content1 input::placeholder{
+   color: #000;
+   font-weight: 800;
+}
+
+footer .end-content .end-content1 input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+footer .end-content .end-content1 button{
+   padding: 10px;
+   background-color: #f7f7f7;
+   border: none;
+}
+footer .end-content p{
+   font-size: 22px;
+   font-family:"Futura Now Headline", "Lucida Sans", Tahoma, sans-serif;
+   color: rgb(239, 66, 66);
+   text-align: center;
+   padding: 10px;
+}
+footer .end-content-2{
+   width: auto;
+   height: inherit;
+   padding: 7em 1.5em 0 1.5em ;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.social-media{
+   display: flex;
+   flex-direction: column;
+  
+  
+}
+.social-media div span{
+   opacity: 0.5;
+  font-size: small;
+}
+.social-media .social-media-icons{
+display: flex;
+flex-direction: column;
+padding-top: 30px;
+
+}
+.social-media .social-media-icons div{
+   padding: 10px;
+  margin-left :10px;
+}
+footer .end-content-2 .logo-2{
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+footer .end-content-2 .logo-2 svg{
+   opacity: 0;
+}
+footer .end-content-2 .logo-2 .terms{
+   padding-top: 4.5em;
+}
+footer .end-content-2 .logo-2 .terms div{
+   display: inline-flex;
+   gap: 20px;
+   text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 0.5em;
+  opacity: 0.6;
+  font-family: helvetica;
+  text-align: center;
+}
+footer .end-content-2 a{
+text-decoration: none;
+color: #000;
+
+}
+
+footer .end-content-2 a:hover{
+   opacity: 0.6;
+}
+footer .end-content-2 .about{
+display: flex;
+justify-content: end;
+}
+footer .end-content-2 .about div{
+   text-align: right;
+}
+.about{
+   padding-top: 30px;
+}
+.about span{
+   font-size: small;
+   opacity: 0.6;
+}
+.about div{
+   line-height: 1.1em;
+}
+.endcontent-3{
+   padding-top: 5em;
+   display: flex;
+   align-items: center;
+   justify-content: center
+}
+.endcontent-3 div{
+  text-align: center;
+   width: 63%;
+   font-family:Helvetica ;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 1.5em;
+  
+}
+.terms{
+   padding: 30px;
+}
+#page5{
+   padding: 10em 0 5em 0;
+   height: fit-content;
+   width: 100vw;
+}
+.client-message{
+   background-color: #f7f7f7;
+   white-space: nowrap;
+   overflow-x: auto;
+   overflow-y: hidden;
+   position: relative;
+}
+.client-message div{
+   display: inline-block;
+}
+.btn{
+   height: 20px;
+   width: 20px;
+  
+   margin: 7vw 7vw 0 7vw;
+  border-radius: 50%;
+cursor: pointer;
+   border: 1px solid black;
+   background-color: #f7f7f7;
+}
+.active{
+   background-color: #000;
+}
+.my-message-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 30vh;
+  
+}
+.my-message-container form{
+   display: flex;
+   flex-direction: column;
+   text-align: left;
+   background-color: black;
+   border-radius: 40px;
+   color: white;
+   padding: 30px;
+   gap: 10px;
+   height: fit-content;
+}
+.my-message-container form input{
+   border: none;
+background-color: black;
+color: white;
+
+}
+.my-message-container form input:focus{
+   border: none;
+   outline: none;
+}
+.my-message-container form input::placeholder{
+   color: white; 
+   font-weight: 800;
+}
+.my-message-container textarea{
+height: 26vh;
+width: 24vw;
+background-color: black;
+border: none;
+color: white;
+
+}
+.my-message-container textarea::placeholder{
+   color: white; 
+   font-weight: 800;
+}
+.my-message-container textarea:focus{
+   outline: none;
+   border: none;
+}
+.my-message-container div{
+   width: 100%;
+   padding: none;
+} 
+
+.my-message-container form button{
+background-color: black;
+width: 100%;
+padding: 10px;
+border: none;
+color: white;
+border-top: 1px solid gray;
+background-color: rgb(100, 92, 92);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.open-menu{
+ background-color: #000;
+ color: white;
+ height: 100vh;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+padding: 20px;
+margin-bottom: 2em;
+
+}
+.open-menu div{
+ display: flex;
+ flex-direction: column;
+justify-content: end;
+align-items: end;
+}
+.open-menu-child{
+   padding-bottom: 3em;
+
+}
+.open-menu .open-menu-connection .connect{
+font-size: 12px;
+
+}
+.open-menu .open-menu-connection,.open-menu .path,.open-menu .career{
+   display: flex;
+   justify-content: end;
+   align-items: flex-start;
+   text-align: left;
+}
+.open-menu .open-menu-connection div{
+   text-align: left;
+   line-height: 1.1;
+   font-size: 20px;
+}
+.new-menu{
+ font-size: 55px;
+ font-weight: 700;
+ line-height: 1;
+ font-family: futura;
+ padding-bottom: 1em;
+}
+.open-menu .donate{
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   padding-bottom: 10px;
+}
+.donate .donate-button-div{
+display: flex;
+flex-direction: column;
+height: 6vh;
+justify-content: baseline;
+align-items: center;
+padding: 18px;
+}
+.donate .donate-button-div div{
+display: flex;
+flex-direction: row;
+background-color: #000;
+padding: 5px;
+}
+.donate .donate-button-div span{
+   width: 100%;
+   display: flex;
+   justify-content: flex-start;
+}
+.donate .donate-button-div button{
+   height: 4vh;
+   width: 5vw;
+  
+}
+.donate .donate-button-div #donate-button-div-first{
+   width: 100%;
+   
+}
+.donate:first-child {
+   width: 100%;
+}
+.donate .donate-menu-button{
+   display: flex;
+   align-items: baseline;
+   width: 100%;
+}
+.donate .donate-menu-button button{
+   background-color: #000;
+  
+   border: none;
+
+}
+.donate .donate-menu-button button a{
+   text-decoration: none;
+   color: white;
+}
+
+.donate2{
+border: 1px solid;
+
+}
+.one-time{
+border-radius: 40px 0 0 40px;
+border-right: none;
+}
+.weekly{
+border-left: none;
+border-right: none;
+}
+.monthly{
+border-radius: 0 40px 40px 0;
+border-left: none;
+}
+.donate-active{
+background-color: rgb(255, 0, 0);
+border: 1px solid;
+color: #000;
+}
+.open-menu{
+background-color: #000;
+color: white;
+height: 100vh;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+padding: 20px;
+
+}
+.open-menu div{
+display: flex;
+flex-direction: column;
+justify-content: end;
+align-items: end;
+}
+.open-menu .open-menu-connection .connect{
+font-size: 12px;
+
+}
+.new-menu{
+font-size: 60px;
+font-weight: 700;
+line-height: 0.9;
+font-family: futura;
+}
+.amount-donate div{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap: 20px;
+
+
+}
+.amount-donate div button{
+padding: 12px 25px;
+border-radius: 20px;
+text-align: center;
+border: 0.5px solid white;
+outline: none;
+background-color: #000;
+color: white;
+}
+.donate h1{
+   font-family: futura;
+   line-height: 0.9;
+   text-transform: uppercase;
+}
+.donate .amount-to-donate{
+   width: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.donate .amount-to-donate input{
+   width: 90%;
+   height: 2.5vh;
+   padding: 13px;
+   font-size: 16px;
+   border-radius: 40px;
+   background-color: #000;
+   color: white;
+   outline: none;
+}
+.donate .amount-to-donate input:active{
+   outline: none;
+  
+}
+.donate .amount-to-donate button{
+   width: 40%;
+   padding: 10px 25px;
+   border-radius: 30px;
+}
+.tax{
+ padding-top: -6px;
+ padding-bottom: 20px;
+   font-size: 10px;
+   font-family:Helvetica ;
+color: gray;
+   width: 100%;
+}
+
+.open-cart{
+   height: 80vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 30px;
+   font-family: helvetica;
+   background-color: #060505;
+   color: white;
+}
+.real-cart{
+   padding-top: 15vh;
+   position: relative;
+   top: 15vh;
+}
+.real-cart .real-cart-child{
+  padding-top: 30px;
+   font-size: 24px;
+   display: flex;
+   justify-content: center;
+
+}
+
+.real-cart button{
+   padding: 25px 60px;
+   border-radius: 40px;
+   border: 1px solid ;
+   color: white;
+   background-color: black;
+   cursor: pointer;
+}
+.sign-in-page{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   height: fit-content;
+   background-color: black;
+   color: white;
+ align-items: baseline;
+  font-size: 20px;
+  line-height: 1.1em;
+}
+.sign-in-page div{
+   padding: 20px;
+ 
+}
+.sign-in-page .header{
+   font-family: futura;
+   font-size: 40px;
+   text-align: left;
+   line-height: 1em;
+   padding: 10px;
+   display: flex;
+  
+   width: 100%;
+   align-items: flex-start;
+}
+ .sign-in-menu{
+   width: 100%;
+
+font-size: 14px;
+
+}
+.sign-in-form{
+   width: 90%;
+
+ 
+}
+.sign-in-page div form{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   width: 100%;
+
+align-items: center;
+}
+.sign-in-page div form input{
+   padding: 15px 50px 15px 10px  ;
+   border-radius: 40px;
+   border: none;
+   width: 90%;
+}
+.sign-in-page .sign-in-up{
+   width: 100%;
+   display: inline-block;
+   font-size: 12px;
+   position: relative;
+   right: -10%;
+}
+.sign-in-page div form div{
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   width: 100%;
+}
+.sign-in-page div form div button{
+   padding: 20px 50px ;
+   background-color: rgb(255, 255, 255);
+   border: 1px solid;
+   color: rgb(0, 0, 0);
+   border-radius: 50px;
+   font-family: helvetica;
+   width: 100%;
+}
+.sign-in-page div form div button:hover{
+   background-color: black;
+   color: white;
+}
+@keyframes slide-left {
+   0% {
+       transform: translateX(0%);
+   }
+   100% {
+       transform: translateX(-50%);
+   }
+}
+@keyframes slide-right {
+   0% {
+       transform: translateX(-50%);
+   }
+   100% {
+       transform: translateX(0);
+   }
+}
+.real-cart-logos{
+   padding-top: 20vh;
+   overflow: hidden;
+  
+   background-color: #060505;
+   color: white;
+   white-space: nowrap;
+}
+.real-cart-logos-slide{
+   display: inline-block;
+   
+   white-space: nowrap;
+   animation: 5s slide-left infinite linear;
+  border-top: 1px solid white;
+}
+.real-cart-logos-slide .real-cart-child{
+   height: 40px;
+   margin: 0 40px;
+   font-family: futura;
+   font-size: 60px;
+}
+/* duplicate the content to create a seamless loop */
+.real-cart-logos-slide::before {
+   content: "";
+   display: inline-block;
+   white-space: nowrap;
+}
+.real-cart-logos-slide::before .real-cart-child {
+   height: 50px;
+   margin: 0 40px;
+}
+.real-cart-logos2{
+   overflow: hidden;
+  
+  
+   background-color: #060505;
+   color: white;
+   white-space: nowrap;
+}
+.real-cart-logos2-slide{
+   display: inline-block;
+   white-space: nowrap;
+   animation: 5s slide-right infinite linear;
+   border-top: 1px solid white;
+}
+.real-cart-logos2-slide .real-cart-child2{
+   height: 50px;
+   margin: 0 40px;
+   font-family: futura;
+   font-size: 60px;
+
+}
+/* duplicate the content to create a seamless loop */
+.real-cart-logos2-slide::before {
+   content: "";
+   display: inline-block;
+   white-space: nowrap;
+}
+.real-cart-logos2-slide::before .real-cart-child2 {
+   height: 50px;
+   margin: 0 40px;
+}
+.sign-up-a{
+   padding: 0%;
+}
+form .form-radio{
+   display: flex;
+   flex-direction: row;
+   font-size: 14px;
+}
+form .form-radio #radio{
+   width: 20px;
+}
+@media screen and (max-width:600px){
+.nav .nav-2{
+   padding: 30px;
+  
+}
+
+   .nav .nav-2 .links{
+      display: none;
+   }
+   .nav .nav-2 .logo{
+      position: fixed;
+     
+   }
+    #page1{
+      min-height: 45vh;
+        position: relative;
+        width: 100%; 
+        padding-top: 18vh; 
+      }
+      
+    #page1 h1{
+        font-family: futura;
+        font-size: 15.6vw;
+        text-transform: uppercase;
+        line-height: 14vw;
+       letter-spacing: -3px;
+    }
+    .video{
+        height: 25%;
+        width: 97%;
+      
+        margin: 3vh 1vw;
+        position: relative;
+    }
+    #page1  #play{
+        width: max-content;
+        height: max-content;
+        padding: 3.3em 2.8em;
+        border-radius: 50%;
+        color: white;
+        background-color: #000;
+        font-family: futura;
+        font-size: 2vw;
+        position: absolute ;
+        text-transform: uppercase;
+        transform: translate(-50%,-50%);
+        opacity: 1;
+        scale: 1;
+        cursor: pointer;
+        top: 50%;
+        left: 50%;
+    }
+    #page2{
+        height: auto;
+         width: 100%;
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items: center;
+        gap: 3vw;
+     
+        
+     }
+     #page2 div{
+         width: 95%;
+       
+         /* background-color: blue; */
+        overflow: hidden;
+        display: grid;
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+     }
+     #page2 div img{
+         height: auto;
+         width: 95%;
+         object-fit: cover;
+         max-width: 100%;
+         scale: 1.2;      
+     }
+     #page3 {
+      justify-content: space-evenly; 
+      padding-top: 0%;
+    }
+     .child{
+      height: 22vh;
+      width: calc(50% - 1.2em); 
+      margin: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 2em; 
+   }
+   .child figure{
+      height:100%;
+      width: fit-content;
+    padding-top: 4em;
+   }
+   .child figure img{
+     height:100%;
+     width: fit-content;
+  }
+  .child figure figcaption{
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     text-transform: uppercase;
+     font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+     font-weight: 300;
+     font-size: small;
+     width: 90%;
+  }
+  .message{
+   display: grid;
+   grid-template-columns:1fr;
+   padding: 2vw 1em 0 1em;
+  gap: 0;
+}
+.message h1{
+   width: 100%;
+   text-transform: uppercase;
+   font-size: 30px;
+   text-align:center;
+  font-weight: 500;
+   font-family: futura;
+line-height: 1em;
+padding-top: 0.8em;
+}
+.message .second-message{
+   font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+   display: flex;
+   flex-direction: column;
+   width: 90%;
+   font-size: 16px;
+   text-align: center;
+justify-content: flex-end;
+padding-top:3em ;
+letter-spacing: 0.01em;
+}
+.message span a{
+   position: relative;
+   text-transform: uppercase;
+   text-decoration: none;
+   width: max-content;
+   color: #000;
+   font-family: "ABC Social Mono", "Lucida Sans", Tahoma, nonospaced;
+   font-size: 14px;
+   letter-spacing: 0.05em;
+   text-align: center;
+ }
+ #page5 .page5-header{
+   text-transform: uppercase; 
+   font-family:  Helvetica;
+   font-size: 13px;
+ }
+ #page5 .client-message div div{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+ }
+ #page5 .client-message div div:hover{
+    color: gray;
+ }
+ #page5 .client-message div div span{
+    text-align: center;
+   font-size: 28px;
+   line-height: 0.9em;
+   font-weight: 500;
+ }
+
+ #page5 .own-message button{
+ padding: 2.5vw 4vw;
+ }
+ #page5 .own-message div span{
+    display: inline-block;
+    width: 90%;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Futura Now Headline" ,Helvetica;
+ }
+ #page5 .paragraph #client-message-paragraph{
+    width: 80%;
+    font-size: 40px;
+ }
+ #page4 .page4-content{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+.page4-content .message{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+  
+}
+.page4-content .message h2{
+   padding-bottom: 0.8em;
+}
+.page4-content .message p{
+   font-size: 16px;
+   line-height: 1.2em;
+}
+.page4-content .message span a{
+   font-size: 12px;
+   font-family:"Lucida Sans", Tahoma, sans-serif ;
+}
+#page4 .page4-image{
+   display: flex;
+  flex-direction: row;
+  
+}
+#page4 .page4-image figure img{
+   width: 40vw;
+   height: 49vh;
+}
+footer{
+   margin-top: 13em;
+}
+footer .end-content .end-content1{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 4em 1vw 0 1vw;
+font-family:"Futura Now Headline", "Lucida Sans", Tahoma, sans-serif ;
+}
+footer .end-content .end-content1 input{
+   font-size: 15px;
+}
+.header-line2{
+margin: 0 1vw 2vh 1vw;
+overflow: hidden;
+}
+footer .end-content .end-content1 input::placeholder{
+   color: #000;
+   font-weight: 800;
+}
+footer .end-content p{
+   font-size: 15px;
+   padding: 0.5em;
+}
+footer .end-content-2{
+   padding: 5em 1em 0 1em ;
+}
+.social-media .social-media-icons{
+display: flex;
+flex-direction: column;
+padding-top: 15px;
+}
+.social-media .social-media-icons div{
+   padding: 10px;
+  margin-left :7px;
+}
+footer .end-content-2 .logo-2 svg{
+   opacity: 0;
+   width: 90px;
+   height: 90px;
+}
+footer .end-content-2 .logo-2 .terms{
+   padding-top: 2.5em;
+}
+footer .end-content-2 .logo-2 .terms div{
+   display: inline;
+   gap: 6px;
+   text-transform: uppercase;
+  font-size: 0.5em;
+  font-weight: 500;
+  line-height: 0.8em;
+}
+
+.about div{
+   line-height: 1.1em;
+}
+.endcontent-3{
+   padding-top: 5em;
+   display: flex;
+   align-items: center;
+   justify-content: center
+}
+.endcontent-3 div{
+   width: 63%;
+   font-size: 9px;
+}
+.terms{
+   padding: 30px;
+}
+}

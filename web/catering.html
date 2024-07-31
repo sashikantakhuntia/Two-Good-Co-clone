@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+PT:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        nav{
+    
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 14vw;
+            
+        }
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+.header-first{
+    display: flex;
+ gap: 30px;
+}
+.header-first span{
+  cursor: pointer;
+  font-size: 14px;
+}
+.header-first span a{
+    text-decoration: none;
+    color: black;
+}
+.search{
+    display: flex;
+    gap: 30px;
+}
+.search span{
+    cursor: pointer;
+}
+.user{
+    display: flex;
+ 
+}
+.cart{
+    background-color: rgb(233, 69, 69);
+    padding: 4px;
+    border-radius: 40%;
+    position: relative;
+    top: -1.5vh;
+    color: white;
+    border: none;   
+}
+.welcome{
+    height: 30vh;
+   position: relative;
+}
+.welcome span{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 21%;
+    color: white;
+    font-family: futura;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+.welcome img{
+    object-fit: cover;
+  object-position: 50% 55%;
+ filter: brightness(0.6);
+  width: 100%;
+  height: 100%;
+}
+.option-container{
+    margin: 4vw 10vw;
+    display: flex;
+    justify-content: center;
+}
+.option{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+}
+.option div{
+    height: 36vh;
+    width: 23vw;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.option div:hover{
+    opacity: 0.8;
+}
+.option div img{
+    height: inherit;
+    width: inherit;
+object-fit:cover;
+filter: brightness(0.5); 
+}
+
+.option-container .option div span{
+    position: absolute;
+    display: flex;
+  text-transform: uppercase;
+    color: white;
+    font-family: futura;
+    font-size: 25px;
+width: inherit;
+justify-content: center;
+text-align: center;
+}
+footer{
+ background-color: black;
+ height: 15vh;
+ display: flex;
+ justify-content: space-around;
+ color: white;
+ padding: 3em 2em 4em 2em;
+ font-family: helvetica;
+ font-size: 16px;
+}
+footer div div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.copyright{
+    text-align: right;
+}
+.copyright .brands{
+    padding-bottom: 12px;
+}
+.copyright .brands .social span{
+ padding: 5px;
+}
+.info{
+    cursor: pointer;
+}
+.postcode{
+    background-color: black;
+    padding: 10px 15px;
+    color: white;
+    position: fixed;
+    bottom: -2%;
+  right: 1%;
+  z-index: 1; 
+  margin: 10px; 
+border: 2px solid white;
+border-radius: 8px 8px 0 0;
+font-family: helvetica;
+letter-spacing: 1.2px;
+cursor: pointer;
+}
+#overlay {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 50vw;
+  height: 30vh;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid whitesmoke;
+  border-radius: 3px;
+}
+#overlay > h2{
+    font-family: futura;
+}
+#overlay .input{
+    border: 1px solid rgb(88, 165, 179);
+    
+  height: 20%;
+  width: 40%;
+   
+    
+}
+#overlay input[type="search"]{
+    border: none;
+    width: 80%;
+    background-color: #f5f5f5;
+    padding: 10px 40px;
+    font-family: helvetica;
+    font-size: 16px;
+    font-weight: 700;
+}
+#overlay input[type="search"]:focus{
+    outline: none;
+}
+#overlay .input button{
+    border: none;
+    background-color: black;
+    height: 100%;
+    color: #f5f5f5;
+cursor: pointer;
+top: 0%;
+right: 0%;
+  width: 18.7%;
+}
+#overlay .xmark{
+    position: absolute;
+    top: 0;
+    right: 0%;
+    background-color: black;
+    color: rgb(199, 198, 198);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#overlay #postcode-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 1em;
+   
+}
+#postcode-message span{
+    font-size: 16px;
+    color: black;
+    font-family: helvetica;
+}
+#postcode-message button{
+    background-color: black;
+ padding: 10px 14px;
+    font-weight: 700;
+border: none;
+border-radius: 7px;
+}
+#postcode-message button a{
+    text-decoration: none;
+color: white;
+}
+
+#search-bar{
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    display: none;
+    background-color: #f5f5f5;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: futura;
+    gap: 2em;
+    display: none;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+}
+.searchinput {
+  width :20vw;
+  height: 100%;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #53535f;
+  caret-color: #f7f7f8;
+  color: #fff;
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  margin-right: 1px;
+  transition: all .2s ease;
+}
+.searchinput:hover {
+  border: 2px solid rgba(255, 255, 255, 0.16);
+}
+.searchinput:focus {
+  border: 2px solid #a970ff;
+  background-color: #0e0e10;
+}
+.search__btn {
+  border: none;
+  cursor: pointer;
+  background-color: rgba(42, 42, 45, 1);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search__btn:hover {
+  background-color: rgba(54, 54, 56, 1);
+}
+.cart-tab{
+            background-color: rgb(48, 46, 46);
+            color: aliceblue;
+            width: 400px;
+            max-width: 100%;
+            position: fixed;
+            top: 0%;
+            right: 0;
+            bottom: 10%;
+            display: grid;
+            grid-template-rows: 70px 1fr 70px;         
+        }
+        .cart-tab h2{
+            text-align: center;
+            font-family: futura;
+            position: relative;
+            top: -5%;
+        }
+        .cart-tab .btn{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .cart-tab .btn button{
+            background-color: rgb(248, 248, 26);
+            border: none;
+            font-family: Poppins;
+           font-weight: 600;
+        }
+        .cart-tab .btn button[type="reset"]{
+            background-color: #f5f5f5;
+        }
+        .cart-tab .list-cart{
+            overflow: auto;
+        }
+        .cart-tab .list-cart::-webkit-scrollbar{
+            width: 0;
+        }
+        .cart-tab{
+            right: -400px;
+            transition: 0.5s;
+        }
+        body.activeTabcart .cart-tab{
+            right: 0;
+        }
+        body.activeTabcart .container{
+            transform: translateX(-250px);
+        }
+    </style>
+</head>
+<body>
+    <div class="postcode">Check your Postcode</div>
+    <nav>
+        
+            <div>
+              <svg width="81" height="73" viewBox="0 0 106 83" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: translate(0px);"><g clip-path="url(#clip0_2228_162)"><path d="M5.50062 6.4473H0V0.557617H17.7807V6.4473H12.2464V25.4842H5.50062V6.4473Z" fill="currentColor"></path><path d="M43.2791 12.4126C43.8662 14.6434 44.027 15.8982 44.0756 16.0715C44.386 14.504 44.629 13.2831 44.8235 12.4126L47.7402 0.56543H54.5571L47.5682 25.492H41.3047L38.2609 14.8582C38.0889 14.2327 37.8122 13.1173 37.4307 11.512C37.1204 12.8008 36.8773 13.9161 36.6006 14.8582L33.6091 25.492H27.3307L20.3418 0.56543H27.1549L29.9931 12.488C30.3035 13.7428 30.5466 14.9976 30.741 16.2185C30.9803 14.9298 31.2944 13.675 31.6048 12.488L34.7309 0.56543H40.1642L43.2791 12.4126Z" fill="currentColor"></path><path d="M76.5219 22.3113C74.173 24.6188 71.066 25.9784 67.7892 26.1326C64.5124 26.2867 61.2932 25.2248 58.7412 23.1478C57.3228 22.0067 56.1618 20.5745 55.3351 18.9463C54.5085 17.3181 54.0353 15.5313 53.9468 13.7045C53.8584 11.8778 54.1568 10.053 54.8223 8.35149C55.4877 6.64996 56.5049 5.11064 57.8063 3.83585C60.3099 1.37646 63.6678 0 67.1641 0C70.6604 0 74.0184 1.37646 76.5219 3.83585C77.7366 5.04162 78.7013 6.47878 79.3597 8.06372C80.0181 9.64865 80.3572 11.3497 80.3572 13.0679C80.3572 14.7861 80.0181 16.4872 79.3597 18.0721C78.7013 19.6571 77.7366 21.0942 76.5219 22.3V22.3113ZM73.6164 13.0604C73.6164 9.01712 70.9166 5.73879 67.1473 5.73879C63.378 5.73879 60.6782 8.98321 60.6782 13.0604C60.6782 17.1376 63.2023 20.382 67.1473 20.382C70.9876 20.382 73.6164 17.1413 73.6164 13.0604Z" fill="currentColor"></path><path d="M12.8 39.1893H26.0486C26.086 39.7131 26.086 40.203 26.086 40.6966C26.086 49.3069 21.2436 54.1905 13.2151 54.1905C9.27008 54.1905 6.19257 53.0374 3.70215 50.4939C1.3102 47.9834 -0.0176051 44.6329 0.000176313 41.1525C0.000176313 33.586 5.60923 28.1108 13.2151 28.1108C18.024 28.1108 21.797 30.0665 24.3547 33.8649L18.5101 36.6872C17.1265 34.7692 15.3952 33.831 13.2151 33.831C9.27008 33.831 6.71235 36.6194 6.71235 41.4314C6.71235 46.2434 9.23643 49.0658 13.2151 49.0658C16.7114 49.0658 19.1645 47.1138 19.5122 44.4271H12.7814L12.8 39.1893Z" fill="currentColor"></path><path d="M49.8502 50.4146C47.3392 52.8731 43.9766 54.249 40.4756 54.2506C37.4173 54.2246 34.4566 53.1629 32.0695 51.2361C30.6511 50.0946 29.49 48.662 28.6633 47.0335C27.8366 45.405 27.3634 43.6179 27.275 41.7909C27.1865 39.9638 27.485 38.1388 28.1504 36.4369C28.8159 34.7351 29.8332 33.1954 31.1347 31.9203C33.6382 29.4609 36.9961 28.0845 40.4924 28.0845C43.9887 28.0845 47.3467 29.4609 49.8502 31.9203C51.0649 33.1261 52.0296 34.5632 52.688 36.1482C53.3465 37.7331 53.6855 39.4342 53.6855 41.1524C53.6855 42.8706 53.3465 44.5717 52.688 46.1566C52.0296 47.7415 51.0649 49.1787 49.8502 50.3845V50.4146ZM46.9447 41.1486C46.9447 37.1054 44.2486 33.827 40.4756 33.827C36.7026 33.827 34.0065 37.0677 34.0065 41.1486C34.0065 45.2296 36.5306 48.4702 40.4756 48.4702C44.316 48.4702 46.9447 45.2258 46.9447 41.1486Z" fill="currentColor"></path><path d="M77.5629 50.4146C75.0506 52.871 71.6888 54.2466 68.1883 54.2506C65.129 54.224 62.1672 53.1624 59.7784 51.2361C58.3608 50.094 57.2004 48.6611 56.3745 47.0324C55.5485 45.4038 55.0758 43.6168 54.9877 41.7899C54.8997 39.9631 55.1983 38.1383 55.8637 36.4366C56.5292 34.735 57.5462 33.1955 58.8473 31.9203C61.3509 29.4609 64.7088 28.0845 68.2051 28.0845C71.7014 28.0845 75.0594 29.4609 77.5629 31.9203C78.7776 33.1261 79.7423 34.5632 80.4007 36.1482C81.0591 37.7331 81.3982 39.4342 81.3982 41.1524C81.3982 42.8706 81.0591 44.5717 80.4007 46.1566C79.7423 47.7415 78.7776 49.1787 77.5629 50.3845V50.4146ZM74.6574 41.1486C74.6574 37.1054 71.9576 33.827 68.1883 33.827C64.419 33.827 61.7192 37.0677 61.7192 41.1486C61.7192 45.2296 64.2433 48.4702 68.1883 48.4702C72.0286 48.4702 74.6574 45.2258 74.6574 41.1486Z" fill="currentColor"></path><path d="M83.7168 28.6606H89.6699C94.2693 28.6606 97.9713 28.7322 101.225 31.0346C104.336 33.2277 105.996 36.6869 105.996 41.1447C105.996 45.6024 104.336 49.0202 101.225 51.2547C98.1134 53.4893 94.718 53.5872 90.601 53.5872H83.7168V28.6606ZM91.5358 48.0103C96.6924 48.0103 99.1492 46.0245 99.1492 41.1447C99.1492 36.1933 96.6214 34.2413 91.5358 34.2413H90.3953V48.0103H91.5358Z" fill="currentColor"></path><path d="M18.9586 65.171C17.16 63.1474 15.4287 62.1564 13.2486 62.1564C9.34095 62.1564 6.74583 65.171 6.74583 69.3725C6.74583 73.2085 9.3073 76.3097 13.2486 76.3097C15.4287 76.3097 17.16 75.3338 18.9586 73.2952V80.7524C16.9763 81.7756 14.784 82.3175 12.5568 82.3351C5.25756 82.3351 0 76.777 0 69.2481C0 61.7193 5.25756 56.1763 12.5568 56.1763C14.7828 56.1891 16.975 56.7259 18.9586 57.7438V65.171Z" fill="currentColor"></path><path d="M42.4125 78.5214C40.0636 80.8289 36.9566 82.1885 33.6798 82.3426C30.403 82.4968 27.1838 81.4349 24.6318 79.3579C23.2135 78.2168 22.0524 76.7846 21.2258 75.1564C20.3991 73.5282 19.9259 71.7413 19.8375 69.9146C19.749 68.0879 20.0475 66.2631 20.7129 64.5616C21.3783 62.86 22.3956 61.3207 23.697 60.0459C26.1996 57.5922 29.5536 56.2192 33.0454 56.2192C36.5372 56.2192 39.8912 57.5922 42.3938 60.0459C43.6085 61.2517 44.5732 62.6889 45.2316 64.2738C45.8901 65.8587 46.2291 67.5598 46.2291 69.278C46.2291 70.9962 45.8901 72.6973 45.2316 74.2822C44.5732 75.8671 43.6085 77.3043 42.3938 78.5101L42.4125 78.5214ZM39.4883 69.2704C39.4883 65.2272 36.7922 61.9489 33.0192 61.9489C29.2462 61.9489 26.5501 65.1933 26.5501 69.2704C26.5501 73.3476 29.0742 76.5921 33.0192 76.5921C36.8596 76.5921 39.4883 73.3514 39.4883 69.2704Z" fill="currentColor"></path><path d="M49.8936 75.4543C50.5724 75.4475 51.238 75.6443 51.8057 76.0194C52.3733 76.3946 52.8176 76.9313 53.082 77.5614C53.3464 78.1915 53.4191 78.8865 53.2908 79.5583C53.1624 80.2301 52.8389 80.8483 52.3612 81.3344C51.8835 81.8205 51.2733 82.1526 50.608 82.2886C49.9426 82.4246 49.2522 82.3582 48.6244 82.098C47.9965 81.8378 47.4596 81.3954 47.0817 80.8271C46.7038 80.2587 46.502 79.59 46.502 78.9059C46.498 77.9951 46.853 77.12 47.4889 76.4728C48.1249 75.8256 48.9898 75.4593 49.8936 75.4543Z" fill="currentColor"></path></g><defs><clipPath id="clip0_2228_162"><rect width="106" height="82.3538" fill="white"></rect></clipPath></defs>
+               
+            </svg>
+            
+            </div>
+            <div class="header">
+                <div class="header-first">
+                    <span><a href="index.html">Home</a></span>
+                    <span>Bespoke Events</span>
+                    <span><i class="fa-solid fa-users-line"></i> Group Order</span>
+                </div>
+
+               <div class="search">
+                    <span id="header-search"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span class="user">
+                        <div><i class="fa-solid fa-user"></i>
+                        <button class="cart info">0</button></div>
+                    </span>
+                    
+               </div>
+            </div>
+        
+    </nav>
+    <div class="main">
+        <div class="welcome">
+          <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/d3b249074f2d48c89939f0c1e399cf29_1728w.jpg" alt="">
+          <span>WELCOME</span>
+        </div>
+        <div class="option-container">
+        <div class="option">
+            <div class="chef">
+           <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/43e750ec58aa468dbda0844cf32d22b1_540w.jpg" alt="">
+         
+           <span>Two Good chef of the month - Linda Marcel</span></div>
+         
+            <div class="breakfast">
+                <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/5aec660f8f6c4177a532fe4a4cbe693d_540w.jpg" alt="">
+                <span>morning</span>
+            </div>
+            <div class="lunch">
+            <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/9fbbbd3f736345a790d8d90185d7e4f7_540w.jpg" alt="">
+            <span>lunch</span>
+            </div>
+            
+            <div class="afternoon">
+                <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/653a64cc65f0468d831b32f9a9d70b90_540w.jpg" alt="">
+                <span>afternoon</span>
+            </div>
+            <div class="evening">
+                <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/d74d178bbb6f4fe3b4cfa820d3c55cec_540w.jpg" alt="">
+                <span>evening</span>
+            </div>
+            <div class="tiffin">
+                <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/44e6e632a81c4218ad57159cf4d6ebad_540w.jpg" alt="">
+                <span>individually packaged meal</span>
+            </div>
+            <div class="drinks">
+                <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/2fe474c5452245848cdbd0df8b453ca1_540w.jpg" alt="">
+                <span>beverages</span>
+            </div>
+            <div class="disposable">
+                <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/1e85138919c84a22a39fe992957689d7_540w.jpg" alt="">
+                <span>Bio disposables</span>
+            </div>
+            
+            <div class="addons">
+                <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/96b90cf8d4a2441a80fb8c2111fe97c6_540w.jpg" alt="">
+                <span>Party & add-ons</span>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+<div>
+  <div>
+    <span>Two Good Co </span>
+    <span class="info"> 0497 889 927</span>
+    <span> sydneycatering@twogood.com.au</span>
+    <span>255 Wilson Street</span>
+    <span> Eveleigh 2010</span>
+    <span>Australia</span>
+  </div>
+</div>
+<div>
+    <div>
+        <span class="info">Terms & Conditions</span>
+    </div>
+</div>
+<div class="copyright">
+    <div class="brands">
+      <span class="social">
+        <span class="info"><i class="fa-brands fa-facebook fa-lg"></i></span>
+        <span class="info"><i class="fa-brands fa-instagram fa-lg"></i></span>
+        <span class="info"><i class="fa-brands fa-twitter fa-lg"></i></span>
+    </span>  
+    </div>
+    <div>
+        <span class="info">&copy 2024 Two Good Co</span>
+        <span class="info">Powered by FoodStorm</span>
+    </div>
+</div>
+</footer>
+<div id="overlay" style="display: none;">
+    <div class="xmark"><i class="fa-solid fa-xmark fa-lg"></i></div>
+    <h2>Enter your Postcode below to see if we deliver to you</h2>
+    <div class="input">
+        <input type="search" name="" placeholder="Enter your Postcode" id="">
+    <button id="submit-postcode"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+    <div id="message">
+    
+    </div>
+  </div>
+  <div class="cart-tab" id="cart-tab">
+    <div>
+        <div class="xmark2" style="background: white;width: 20px;height: 20px;color: #0e0e10; padding: 5px;" ><i  class="fa-solid fa-xmark fa-lg"></i></div>
+        <h2>Shopping Cart</h2>
+    </div>
+    <div class="list-cart">
+    <span >add items</span></div>
+    <div class="btn">
+        <button  type="reset">clear</button>
+        <button  type="submit">checkout</button>
+    </div>
+</div>
+
+<div id="search-bar">
+    <label for="search">Search:</label>
+    <div class="search-container">
+        <input type="text" name="text" class="searchinput" placeholder="Dark Twitch Search">
+        <button class="search__btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+            <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="#efeff1"></path>
+          </svg>
+        </button>
+      </div>
+    <span id="search-close" style="cursor: pointer;"><i class="fa-solid fa-x"></i>close</span>
+</div>
+<script>
+    const body=document.body
+    const postcode=document.querySelector('.postcode')
+const xmark=document.querySelector('.xmark')
+const xmark2=document.querySelector('.xmark2')
+const message=document.getElementById('message')
+   const submit=document.querySelector('#submit-postcode')
+   const cart=document.querySelector('.cart')
+   const cartdiv=document.getElementById('cart-tab')
+   const search=document.getElementById('header-search')
+   const closem=document.getElementById('search-close')
+    postcode.addEventListener('click', () => {
+  document.querySelector('#overlay').style.display = 'flex';
+ 
+});
+
+xmark.addEventListener('click',()=>{
+    document.querySelector('#overlay').style.display = 'none';
+   
+})
+submit.addEventListener('click',()=>{
+message.innerHTML=`
+<div id="postcode-message">
+     
+            <span>Sorry, we are not able to deliver to your selected Postcode</span>
+        
+            <button><a href="shop.html">Continue Shopping</a></button>
+        </div>
+`
+})
+cart.addEventListener('click',()=>{
+   body.classList.toggle('activeTabcart')
+})
+xmark2.addEventListener('click',()=>{
+    body.classList.toggle('activeTabcart')
+   
+})
+search.addEventListener('click',()=>{
+document.querySelector('#search-bar').style.display='block'
+})
+closem.addEventListener('click',()=>{
+    document.querySelector('#search-bar').style.display='none'
+})
+</script>
+</body>
+</html>

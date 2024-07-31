@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100%;
+           box-sizing: border-box;
+         
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            padding-left: 30vw;
+            padding-right: 30vw;
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+           width: 100%;
+        }
+        .links{
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            opacity: 0.7;
+        }
+        .links a{
+text-decoration: none;
+color: rgb(84, 82, 82);
+        }
+        .container div span h2{
+            font-family: futura;
+        }
+        .form div{
+            padding: 6px;
+            width: 100%;
+        }
+        .form input{
+width: 100%;
+        }
+        label,p{
+            font-family: sans-serif;
+        }
+        .form input[type="email"]{
+            padding: 8px 6px;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+        .form input[type="submit"]{
+            padding: 15px 25px;
+            border-radius: 40px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+          margin-top: 2em;
+          font-weight: 700;
+          font-size: 16px;
+          outline: none;
+        }
+        .form input[type="email"]:focus{
+            outline: none;
+        }
+        .error{
+            margin-top: 2em;
+        }
+        #address-error{
+            color: red;
+            margin-top: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="links">
+            <span><a href="index.html">Home </a></span>/<span>Forgot Password</span>
+        </div>
+        <div>
+            <span><h2>RESET PASSWORD</h2></span>
+        </div>
+        <div>
+            <p>
+                Fill in your email below to request a new password. An email will be sent to the address below containing a link to verify your email address.
+            </p>
+        </div>
+     <div class="form">
+        <div>
+        <label for="email">Email Address</label></div>
+        <div>
+        <input type="email" class="email" id="email"></div>
+        <div>
+        <input type="submit" id="submit" value="Reset Password"></div>
+     </div>
+     <div class="error">
+        <span id="address-error">
+           
+        </span>
+     </div>
+    </div>
+    <script>
+        const addresserror=document.getElementById('address-error')
+        const email=document.getElementById('email')
+        const submit=document.getElementById('submit')
+        let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        submit.addEventListener('click',()=>{
+             if(emailRegex.test(email.value)){
+               console.log("valid")
+            }
+            else{
+                addresserror.innerText=" Please use a valid email address, such as user@example.com."
+            }
+        })
+    </script>
+</body>
+</html>
