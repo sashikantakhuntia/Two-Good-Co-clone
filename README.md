@@ -1,1 +1,1 @@
-# Two-Good-Co-clone
+I’m pleased to share a recent web development project where I applied HTML, CSS, and JavaScript to craft a refined and interactive clone of a website Two Good Co. . This project allowed me to delve into front-end design and coding practices, enhancing both my technical skills and design sensibility. I’m eager to hear your thoughts and feedback! #WebDevelopment #HTML #CSS #JavaScript #TechProjects# Two-Good-Co-clone
